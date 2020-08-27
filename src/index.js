@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import NavBar from './Components/Navbar/index';
-import MainBanner from './Components/MainBanner/index';
-import { GlobalStyle } from "./GlobalStyles";
+import App from './App';
+// import NavBar from './Components/Navbar/index';
+
+// import MainBanner from './Components/MainBanner/index';
+
 
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-   <GlobalStyle/>
-   <NavBar />
-   <MainBanner></MainBanner>
+  <App></App>
   </React.StrictMode>,
   document.getElementById('root')
 );
