@@ -33,6 +33,7 @@ export const NavUlWrapper = styled('ul')`
     font-weight: bolder;
     /* display: block;
     height: 100%; */
+    font-size: 25px;
     text-decoration: none;
     border-bottom: 2px solid transparent;
     margin: 0 1.5rem;
