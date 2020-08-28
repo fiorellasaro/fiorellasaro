@@ -29,12 +29,12 @@ const Navbar = (props) => {
             <a href="/">ABOUT</a>
             <a href="/">CONTACT</a>
           </NavLinks>
-          <BurgerWrapper>
-            <BurgerMenu
+         
+            <BurgerMenu 
               navbarState={props.navbarState} 
               handleNavbar={props.handleNavbar}
             />
-          </BurgerWrapper>
+
         </FlexContainer>
       </NavBar>
       <CollapseMenu 
