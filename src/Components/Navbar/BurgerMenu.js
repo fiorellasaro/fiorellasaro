@@ -9,7 +9,6 @@ const Burgermenu = (props) => {
         <span>&nbsp;</span>
         <span>&nbsp;</span>
       </div>
-
     </Wrapper>
   );
 }
@@ -22,7 +21,7 @@ const Wrapper = styled.div`
       display: none;
   }
 
-  width: 60px;
+  width: 50px;
   height: 45px;
   display: flex;
   -webkit-transform: rotate(0deg);
@@ -68,93 +67,11 @@ const Wrapper = styled.div`
     }
   .open span:nth-child(3) {
     transform: rotate(-45deg);
-    margin-top: -35px;
+    margin-top: -36px;
   
   }
   .open span:nth-child(1) {
     transform: rotate(45deg);
     margin-top: 20px;
   } 
-/* .open span:nth-child(1) {
-  top: 0px;
-}
-
-.open span:nth-child(2) {
-  top: 18px;
-}
-
-.open span:nth-child(3) {
-  top: 36px;
-} */
-/* sdjks */
-/* .open span:nth-child(1), .open span:nth-child(6) {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.open span:nth-child(2), .open span:nth-child(5) {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-.open span:nth-child(1) {
-  left: 5px;
-  top: 7px;
-}
-
-.open span:nth-child(2) {
-  left: calc(50% - 5px);
-  top: 7px;
-}
-
-.open span:nth-child(3) {
-  left: -50%;
-  opacity: 0;
-}
-
-.open span:nth-child(4) {
-  left: 100%;
-  opacity: 0;
-}
-
-.open span:nth-child(5) {
-  left: 5px;
-  top: 29px;
-}
-
-.open span:nth-child(6) {
-  left: calc(50% - 5px);
-  top: 29px;
-} */
-  /* padding-top: .7rem;
-  cursor: pointer;
-  display: block;
-  & span {
-    background: #fdcb6e;
-    display: block;
-    position: relative;
-    width: 3.5rem;
-    height: .4rem;
-    margin-bottom: .7rem;
-    transition: all ease-in-out 0.2s;
-  }
-  .open {
-      width:60px;
-      height:60px;
-    }
-  .open span:nth-child(2) {
-      opacity: 0;
-    }
-  .open span:nth-child(3) {
-    transform: rotate(45deg);
-    top: -11px;
-  }
-  .open span:nth-child(1) {
-    transform: rotate(-45deg);
-    top: 11px;
-  } */
 `;

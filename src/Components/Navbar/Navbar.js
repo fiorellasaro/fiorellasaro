@@ -64,7 +64,7 @@ const NavBar = styled(animated.nav)`
   align-items:center;
 `;
 
-const FlexContainer = styled.div`
+export const FlexContainer = styled.div`
   width: 80%;
   height: 10vh;
   display: flex;
@@ -72,6 +72,9 @@ const FlexContainer = styled.div`
   padding: 0 2rem;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 425px){
+  flex-direction: ${(props) => props.mobile ? 'column' : '' };
+  }
 `;
 
 const NavLinks = styled(animated.ul)`
