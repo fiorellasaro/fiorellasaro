@@ -1,11 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
-/* @import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap'); */
-
-@import url("https://use.typekit.net/iui1ofz.css");
-
-@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
 
 *{
   font-family: "serenity", sans-serif;

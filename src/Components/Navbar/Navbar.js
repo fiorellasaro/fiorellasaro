@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { Component, useState, useRef, useEffect } from 'react'
 import styled from "styled-components";
 import { useSpring, animated, config } from "react-spring";
 
 import Brand from "./Brand";
 import BurgerMenu from "./BurgerMenu";
 import CollapseMenu from "./CollapseMenu";
+import Menu from "../Menu";
 
 const Navbar = (props) => {
   const barAnimation = useSpring({
@@ -18,6 +19,12 @@ const Navbar = (props) => {
     delay: 800,
     config: config.wobbly,
   });
+
+  const [open, setOpen] = useState(false);
+  const node = useRef();
+  const menuId = "main-menu";
+
+  useOnClickOutside(node, () => setOpen(false));
 
   return (
     <>
@@ -37,6 +44,9 @@ const Navbar = (props) => {
 
         </FlexContainer>
       </NavBar>
+      {/* <div ref={node}>
+            <Menu open={open} setOpen={setOpen} id={menuId} />
+        </div> */}
       <CollapseMenu 
         navbarState={props.navbarState} 
         handleNavbar={props.handleNavbar}
@@ -46,6 +56,24 @@ const Navbar = (props) => {
 }
 
 export default Navbar
+
+const useOnClickOutside = (ref, handler) => {
+  useEffect(() => {
+    const listener = event => {
+      if (!ref.current || ref.current.contains(event.target)) {
+        return;
+      }
+      handler(event);
+    };
+    document.addEventListener('mousedown', listener);
+
+    return () => {
+      document.removeEventListener('mousedown', listener);
+    };
+  },
+  [ref, handler],
+  );
+};
 
 const NavBar = styled(animated.nav)`
   /* position: fixed;

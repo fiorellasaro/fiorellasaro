@@ -6,13 +6,14 @@ import { useSpring, animated } from 'react-spring';
 const CollapseMenu = (props) => {
   const { open } = useSpring({ open: props.navbarState ? 0 : 1 });
 
-  if (props.navbarState === true) {
+  // if (props.navbarState === true) {
     return (
       <CollapseWrapper style={{
         transform: open.interpolate({
           range: [0, 0.2, 0.3, 1],
-          output: [0, -20, 0, -200],
-        }).interpolate(openValue => `translate3d(0, ${openValue}px, 0`),
+          output: [0, -20, 0, -5000],
+        }).interpolate(openValue => `translate3d( ${openValue}px,0, 0`),
+     
       }}
       >
         <NavLinks>
@@ -22,8 +23,8 @@ const CollapseMenu = (props) => {
         </NavLinks>
       </CollapseWrapper>
     );
-  }
-  return null;
+  // }
+  // return null;
 };
 
 export default CollapseMenu;
@@ -34,6 +35,7 @@ const CollapseWrapper = styled(animated.div)`
   left: 0;
   right: 0;
   height: 90vh;
+  width: 100%;
 `;
 
 const NavLinks = styled.ul`
