@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useEffect,  useRef} from 'react';
+import lottie from 'lottie-web';
 
 import {
     MainBannerContainer,
     MainMessageContainer,
     MainImageContainer,
+    FlexMainContainer,
     MainContainer,
 } from './styles'
 
@@ -12,18 +14,30 @@ import {
 } from '../Navbar/Navbar.js'
 
 const MainBanner = (props) => {
+  const container = useRef(null);
+
+  useEffect(()=>{
+      lottie.loadAnimation({
+        container: container.current,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        animationData: require('../../Lotties/16932-loader.json'),
+      })
+  }, [])
+
   return (
     <>
       <MainBannerContainer>
-      <FlexContainer mobile>
-         <MainMessageContainer>
-            <h1>Hello!, I'm a creative unicorn</h1>
-            <p>Miel, guitarra pantalla negra pildora en la cama sábana de chocolate</p>
-            <button>WORK</button>
-          </MainMessageContainer>
-          <MainImageContainer></MainImageContainer>
-      </FlexContainer>
+  <FlexMainContainer>
+  <MainMessageContainer>
+            <h1>Hello!, my name is Fiorella and I</h1>
+            <p>Design, draw, read tarot, </p>
 
+          </MainMessageContainer>
+          <MainImageContainer ref={container}>
+          </MainImageContainer>
+  </FlexMainContainer>
       </MainBannerContainer>
     </>
   )

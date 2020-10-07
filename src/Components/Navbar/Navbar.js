@@ -101,7 +101,7 @@ export const FlexContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   @media (max-width: 425px){
-  flex-direction: ${(props) => props.mobile ? 'column' : '' };
+  flex-direction: ${(props) => props.mobile ? 'column' : 'row' };
   }
 `;
 

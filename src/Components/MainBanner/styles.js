@@ -3,18 +3,27 @@ import styled from '@emotion/styled'
 export const MainBannerContainer = styled('div')`
   display: flex;
   background-color: #1c1c1c;
+  justify-content: center;
   align-items: center;
   height: 90vh;
   width: 100%;
+
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
-export const MainContainer = styled('div')`
-  display: flex;
-  background-color: #1c1c1c;
-  align-items: center;
-  justify-content: space-between;
-  height: 90vh;
+
+export const FlexMainContainer = styled.div`
   width: 80%;
-`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: 425px){
+  flex-direction: column;
+  }
+`;
+
 
 export const MainMessageContainer = styled('div')`
   display: flex;
@@ -37,7 +46,4 @@ export const MainMessageContainer = styled('div')`
 export const MainImageContainer = styled('div')`
   display: flex;
   width: 100%;
-  background-color: white;
-  height: 90vh;
-
 `
