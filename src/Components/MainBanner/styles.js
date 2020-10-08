@@ -7,6 +7,7 @@ export const MainBannerContainer = styled('div')`
   align-items: center;
   height: 90vh;
   width: 100%;
+  flex-direction: column;
 
   
   @media (max-width: 768px) {
@@ -17,8 +18,9 @@ export const MainBannerContainer = styled('div')`
 export const FlexMainContainer = styled.div`
   width: 80%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  height: 80vh;
   @media (max-width: 425px){
   flex-direction: column;
   }
@@ -27,23 +29,32 @@ export const FlexMainContainer = styled.div`
 
 export const MainMessageContainer = styled('div')`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   width:100%;
   & h1{
     font-size:80px;
+    text-align:center;
   }
   & p{
-    font-size:24px;
+    font-size:35px;
   }
 
   @media (max-width: 768px) {
     & h1 {
-      font-size: 30px;
+      font-size: 40px;
+    }
+    & p{
+      font-size:25px;
     }
   }
 `
 export const MainImageContainer = styled('div')`
   display: flex;
   width: 100%;
+`
+
+export const MainArrowButton = styled('div')`
+  display: flex;
+  width: 70px;
 `

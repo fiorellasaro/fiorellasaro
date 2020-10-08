@@ -6,7 +6,7 @@ import {
     MainMessageContainer,
     MainImageContainer,
     FlexMainContainer,
-    MainContainer,
+    MainArrowButton
 } from './styles'
 
 import {
@@ -15,6 +15,7 @@ import {
 
 const MainBanner = (props) => {
   const container = useRef(null);
+  const containerArrow = useRef(null);
 
   useEffect(()=>{
       lottie.loadAnimation({
@@ -22,7 +23,16 @@ const MainBanner = (props) => {
         renderer: 'svg',
         loop: true,
         autoplay: true,
+        name: 'darkRomb',
         animationData: require('../../Lotties/16932-loader.json'),
+      })
+      lottie.loadAnimation({
+        container: containerArrow.current,
+        renderer: 'svg',
+        loop: true,
+        name: 'arrov-down',
+        autoplay: true,
+        animationData: require('../../Lotties/arrow-down.json'),
       })
   }, [])
 
@@ -30,14 +40,15 @@ const MainBanner = (props) => {
     <>
       <MainBannerContainer>
   <FlexMainContainer>
-  <MainMessageContainer>
+          <MainMessageContainer>
             <h1>Hello!, my name is Fiorella and I</h1>
-            <p>Design, draw, read tarot, </p>
+            <p>Design, draw, read tarot and love cats </p>
 
           </MainMessageContainer>
           <MainImageContainer ref={container}>
           </MainImageContainer>
   </FlexMainContainer>
+  <MainArrowButton ref={containerArrow}></MainArrowButton>
       </MainBannerContainer>
     </>
   )
