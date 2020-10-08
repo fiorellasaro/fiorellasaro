@@ -36,6 +36,7 @@ const CollapseWrapper = styled(animated.div)`
   right: 0;
   height: 90vh;
   width: 100%;
+  z-index: 1;
 `;
 
 const NavLinks = styled.ul`

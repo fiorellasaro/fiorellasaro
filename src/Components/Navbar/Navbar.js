@@ -80,7 +80,9 @@ const NavBar = styled(animated.nav)`
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 1 !important;
   background: #2d3436;
+
   font-size: 1.4rem; */
   position: sticky;
   top: 0;
