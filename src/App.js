@@ -1,6 +1,7 @@
 import React, { Component, useState, useRef, useEffect } from 'react'
 import Navbar from "./Components/Navbar/Navbar";
 import MainBanner from './Components/MainBanner/index';
+import WorkContainer from './Components/WorkContainer/index';
 import { Burger, Menu } from './Components';
 import { GlobalStyle } from "./GlobalStyles";
 import FocusLock from 'react-focus-lock';
@@ -60,6 +61,7 @@ function App() {
         </div> */}
         <Navbar navbarState={navbarOpen} handleNavbar={handleNavbar} ></Navbar>
         <MainBanner></MainBanner>
+        <WorkContainer></WorkContainer>
         
       </>
   );
