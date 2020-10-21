@@ -45,7 +45,7 @@ export const MainMessageContainer = styled('div')`
   @media (max-width: 768px) {
     
     & h1 {
-       font-size: 25px !important;
+       font-size: 35px !important;
        margin-bottom: 2em !important;
     }
     & p{
