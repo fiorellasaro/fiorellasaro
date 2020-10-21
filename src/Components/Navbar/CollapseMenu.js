@@ -18,6 +18,7 @@ const CollapseMenu = (props) => {
       >
         <NavLinks>
           <li><a href="/" onClick={props.handleNavbar}>WORK</a></li>
+          <li><a href="/" onClick={props.handleNavbar}>TAROT</a></li>
           <li><a href="/" onClick={props.handleNavbar}>ABOUT</a></li>
           <li><a href="/" onClick={props.handleNavbar}>CONTACT</a></li>
         </NavLinks>

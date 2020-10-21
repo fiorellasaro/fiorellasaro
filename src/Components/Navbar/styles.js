@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
 export const NavBarHeader = styled('nav')`
   position: sticky;
+  background: #1c1c1c;
+  z-index: 1;
   top: 0;
   left: 0;
   background: #1c1c1c;

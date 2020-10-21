@@ -49,9 +49,16 @@ function App() {
             <Menu open={open} setOpen={setOpen} id={menuId} />
           </FocusLock>
         </div> */}
-        {transitions.map(({ item,props,key})=>(
+        <Navbar navbarState={navbarOpen} handleNavbar={handleNavbar} ></Navbar>
+        <Switch>
+                <Route exact path="/" component={MainBanner}></Route>
+                <Route exact path="/work" component={WorkContainer}></Route>
+                <Route exact path="/tarot"></Route>
+                <Route exact path="/about"></Route>
+                <Route exact path="/contact"></Route>
+        </Switch>
+        {/* {transitions.map(({ item,props,key})=>(
           <animated.div key={key} style={props}>
-          <Navbar navbarState={navbarOpen} handleNavbar={handleNavbar} ></Navbar>
             <Switch location={item}>
                 <Route exact path="/" component={MainBanner}></Route>
                 <Route exact path="/work" component={WorkContainer}></Route>
@@ -61,7 +68,7 @@ function App() {
             </Switch>
           </animated.div>
 
-        ))}
+        ))} */}
 
         {/* <MainBanner></MainBanner>
         <WorkContainer></WorkContainer> */}
