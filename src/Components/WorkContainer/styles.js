@@ -5,7 +5,7 @@ export const MainBannerContainer = styled('div')`
   background-color: #FFFFFF;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
 
   

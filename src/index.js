@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import {BrowserRouter as Router} from 'react-router-dom';
 // import NavBar from './Components/Navbar/index';
 
 // import MainBanner from './Components/MainBanner/index';
@@ -11,7 +12,10 @@ import Burgermenu from './Components/Navbar/BurgerMenu';
 
 ReactDOM.render(
   <React.StrictMode>
-  <App></App>
+    <Router>
+    <App></App>
+    </Router>
+
   </React.StrictMode>,
   document.getElementById('root')
 );

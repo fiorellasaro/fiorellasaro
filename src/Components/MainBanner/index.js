@@ -1,21 +1,27 @@
 import React, {useEffect,  useRef} from 'react';
 import lottie from 'lottie-web';
+import Typist from 'react-text-typist';
+
+ 
+
+
 
 import {
     MainBannerContainer,
     MainMessageContainer,
     MainImageContainer,
     FlexMainContainer,
-    MainArrowButton
+    MainArrowButton,
+    StyledTypist
 } from './styles'
 
-import {
-  FlexContainer
-} from '../Navbar/Navbar.js'
+import WorkContainer from '../WorkContainer'
 
 const MainBanner = (props) => {
   const container = useRef(null);
   const containerArrow = useRef(null);
+
+
 
   useEffect(()=>{
       lottie.loadAnimation({
@@ -38,18 +44,22 @@ const MainBanner = (props) => {
 
   return (
     <>
-      <MainBannerContainer>
-  <FlexMainContainer>
-          <MainMessageContainer>
-            <h1>Hello!, my name is Fiorella and I</h1>
-            <p>Design, draw, read tarot and love cats </p>
+    <div>
+    <MainBannerContainer>
+        <FlexMainContainer>
+            <MainMessageContainer>
+                <h1>Hola! soy Fiorella y me encanta <br></br> <StyledTypist sentences={['diseñar', 'crear', 'el tarot', 'dibujar']} loop={true} cursorColor="white" /></h1>
+                {/* <p>Design, draw, read tarot and love cats </p> */}
 
-          </MainMessageContainer>
-          <MainImageContainer ref={container}>
-          </MainImageContainer>
-  </FlexMainContainer>
-  <MainArrowButton ref={containerArrow}></MainArrowButton>
+
+            </MainMessageContainer>
+            <MainImageContainer ref={container}></MainImageContainer>
+        </FlexMainContainer>
+        <MainArrowButton ref={containerArrow}></MainArrowButton>
       </MainBannerContainer>
+      <WorkContainer></WorkContainer>
+    </div>
+
     </>
   )
 }

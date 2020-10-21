@@ -1,45 +1,32 @@
-import React, { Component, useState, useRef, useEffect } from 'react'
+import React, { Component, useState, useRef, useEffect  } from 'react'
 import Navbar from "./Components/Navbar/Navbar";
 import MainBanner from './Components/MainBanner/index';
 import WorkContainer from './Components/WorkContainer/index';
 import { Burger, Menu } from './Components';
 import { GlobalStyle } from "./GlobalStyles";
 import FocusLock from 'react-focus-lock';
-// class App extends Component {
-//   state = {
-//     navbarOpen: false
-//   }
+import {Switch, Route, useLocation} from 'react-router-dom';
+import {useTransition, animated} from 'react-spring';
 
-//   handleNavbar = () => {
-//     this.setState({ navbarOpen: !this.state.navbarOpen });
-//   }
+function usePageViews() {
+  // const location = useLocation()
+  // React.useEffect(() => {
+  //   window.ga.send(["pageview", location.pathname]);
+  // }, [location]);
 
-//   render() {
 
-//     return (
-//       <>
-//         {/* <Navbar 
-//           navbarState={this.state.navbarOpen} 
-//           handleNavbar={this.handleNavbar}
-//         />
-//         <MainBanner></MainBanner> */}
-//         <div ref={node}>
-//           <FocusLock disabled={!open}>
-//             <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
-//             <Menu open={open} setOpen={setOpen} id={menuId} />
-//           </FocusLock>
-//         </div>
-//          <GlobalStyle/>
-
-//       </>
-//     )
-//   }
-// }
-
-// export default App;
-
+}
 
 function App() {
+
+  // usePageViews();
+  const location = useLocation()
+  const transitions = useTransition(location, location=> location.pathname, {
+    from: {opacity:0, transform:"translate(100%,0)"},
+    enter :{opacity:1, transform:"translate(0%,0)"},
+    leave: {opacity:0, transform:"translate(100%,0)"}
+  });
+
   const [open, setOpen] = useState(false);
   const node = useRef();
   const menuId = "main-menu";
@@ -50,8 +37,11 @@ function App() {
   function handleNavbar() {
     setNavbarOpen(!navbarOpen)
   }
+
+
   return (
       <>
+      
         <GlobalStyle />
         {/* <div ref={node}>
           <FocusLock disabled={!open}>
@@ -59,9 +49,22 @@ function App() {
             <Menu open={open} setOpen={setOpen} id={menuId} />
           </FocusLock>
         </div> */}
-        <Navbar navbarState={navbarOpen} handleNavbar={handleNavbar} ></Navbar>
-        <MainBanner></MainBanner>
-        <WorkContainer></WorkContainer>
+        {transitions.map(({ item,props,key})=>(
+          <animated.div key={key} style={props}>
+          <Navbar navbarState={navbarOpen} handleNavbar={handleNavbar} ></Navbar>
+            <Switch location={item}>
+                <Route exact path="/" component={MainBanner}></Route>
+                <Route exact path="/work" component={WorkContainer}></Route>
+                <Route exact path="/tarot"></Route>
+                <Route exact path="/about"></Route>
+                <Route exact path="/contact"></Route>
+            </Switch>
+          </animated.div>
+
+        ))}
+
+        {/* <MainBanner></MainBanner>
+        <WorkContainer></WorkContainer> */}
         
       </>
   );

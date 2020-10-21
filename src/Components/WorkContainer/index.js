@@ -1,12 +1,12 @@
-import React, {useEffect,  useRef} from 'react';
+import React, { useEffect, useRef } from 'react';
 import lottie from 'lottie-web';
 
 import {
-    MainBannerContainer,
-    MainMessageContainer,
-    MainImageContainer,
-    FlexMainContainer,
-    MainContainer,
+  MainBannerContainer,
+  MainMessageContainer,
+  MainImageContainer,
+  FlexMainContainer,
+  MainContainer,
 } from './styles'
 
 import {
@@ -16,26 +16,26 @@ import {
 const WorkContainer = (props) => {
   const container = useRef(null);
 
-  useEffect(()=>{
-      lottie.loadAnimation({
-        container: container.current,
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        animationData: require('../../Lotties/tarot-card-rotation.json'),
-      })
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: container.current,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: require('../../Lotties/tarot-card-rotation.json'),
+    })
   }, [])
 
   return (
     <>
       <MainBannerContainer>
-  <FlexMainContainer>
+        <FlexMainContainer>
           <MainMessageContainer>
             <h1>WORK</h1>
           </MainMessageContainer>
           <MainImageContainer ref={container}>
           </MainImageContainer>
-  </FlexMainContainer>
+        </FlexMainContainer>
       </MainBannerContainer>
     </>
   )

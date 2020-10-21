@@ -1,11 +1,15 @@
 import React, { Component, useState, useRef, useEffect } from 'react'
 import styled from "styled-components";
 import { useSpring, animated, config } from "react-spring";
+import {NavLink} from 'react-router-dom';
+
 
 import Brand from "./Brand";
 import BurgerMenu from "./BurgerMenu";
 import CollapseMenu from "./CollapseMenu";
 import Menu from "../Menu";
+
+
 
 const Navbar = (props) => {
   const barAnimation = useSpring({
@@ -20,6 +24,7 @@ const Navbar = (props) => {
     config: config.wobbly,
   });
 
+
   const [open, setOpen] = useState(false);
   const node = useRef();
   const menuId = "main-menu";
@@ -30,12 +35,20 @@ const Navbar = (props) => {
     <>
       <NavBar style={barAnimation}>
         <FlexContainer>
-          <Brand />
+        <NavLink exact to="/" >
+            <Brand />
+        </NavLink>
+        
+       
           <NavLinks style={linkAnimation}>
-            <a href="/">WORK</a>
-            <a href="/">ABOUT</a>
-            <a href="/">CONTACT</a>
+            <NavLink exact to="/" ></NavLink>
+            <NavLink exact to="/work" activeStyle={{ borderBottom: "2px solid #ffffff"}} >WORK</NavLink>
+            <NavLink exact to="/tarot">TAROT</NavLink>
+            <NavLink exact to="/about">ABOUT</NavLink>
+            <NavLink exact to="/contact">CONTACT</NavLink>
           </NavLinks>
+          
+
          
             <BurgerMenu 
               navbarState={props.navbarState} 

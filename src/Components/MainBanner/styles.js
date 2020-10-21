@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import Typist from 'react-text-typist';
 
 export const MainBannerContainer = styled('div')`
   display: flex;
@@ -33,8 +34,9 @@ export const MainMessageContainer = styled('div')`
   flex-direction: column;
   width:100%;
   & h1{
-    font-size:80px;
-    text-align:center;
+    font-size: 45px;
+    // font-size:80px;
+    // text-align:center;
   }
   & p{
     font-size:35px;
@@ -42,7 +44,7 @@ export const MainMessageContainer = styled('div')`
 
   @media (max-width: 768px) {
     & h1 {
-      font-size: 40px;
+      // font-size: 40px;
     }
     & p{
       font-size:25px;
@@ -51,10 +53,14 @@ export const MainMessageContainer = styled('div')`
 `
 export const MainImageContainer = styled('div')`
   display: flex;
-  width: 100%;
+  width: 80%;
 `
 
 export const MainArrowButton = styled('div')`
   display: flex;
   width: 70px;
 `
+
+export const StyledTypist = styled(Typist)`
+margin: 0; padding: 0; color: white; font-size: 80px; font-family: graphite-std,sans-serif;
+`;
