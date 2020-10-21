@@ -6,12 +6,8 @@ import {
   MainMessageContainer,
   MainImageContainer,
   FlexMainContainer,
-  MainContainer,
 } from './styles'
 
-import {
-  FlexContainer
-} from '../Navbar/Navbar.js'
 
 const WorkContainer = (props) => {
   const container = useRef(null);

@@ -1,8 +1,6 @@
 import React, {useEffect,  useRef} from 'react';
 import lottie from 'lottie-web';
-import Typist from 'react-text-typist';
-
- 
+import ReactLogo from '../../assets/Universe.svg';
 
 
 
@@ -53,9 +51,13 @@ const MainBanner = (props) => {
 
 
             </MainMessageContainer>
-            <MainImageContainer ref={container}></MainImageContainer>
+            <MainImageContainer  style={{ backgroundImage: `url(${ReactLogo})` }}>
+           
+            </MainImageContainer>
         </FlexMainContainer>
-        <MainArrowButton ref={containerArrow}></MainArrowButton>
+        <MainArrowButton ref={containerArrow}>
+          
+        </MainArrowButton>
       </MainBannerContainer>
       <WorkContainer></WorkContainer>
     </div>

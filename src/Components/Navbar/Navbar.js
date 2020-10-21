@@ -1,4 +1,4 @@
-import React, { Component, useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import styled from "styled-components";
 import { useSpring, animated, config } from "react-spring";
 import {NavLink} from 'react-router-dom';
@@ -7,7 +7,7 @@ import {NavLink} from 'react-router-dom';
 import Brand from "./Brand";
 import BurgerMenu from "./BurgerMenu";
 import CollapseMenu from "./CollapseMenu";
-import Menu from "../Menu";
+
 
 
 
@@ -27,7 +27,7 @@ const Navbar = (props) => {
 
   const [open, setOpen] = useState(false);
   const node = useRef();
-  const menuId = "main-menu";
+  // const menuId = "main-menu";
 
   useOnClickOutside(node, () => setOpen(false));
 
@@ -191,9 +191,3 @@ const NavLinks = styled(animated.ul)`
   }
 `;
  
-const BurgerWrapper = styled.div`
- 
-  @media (min-width: 769px) {
-    display: none;
-  }
-`;

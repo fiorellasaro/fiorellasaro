@@ -43,8 +43,10 @@ export const MainMessageContainer = styled('div')`
   }
 
   @media (max-width: 768px) {
+    
     & h1 {
-      // font-size: 40px;
+       font-size: 25px !important;
+       margin-bottom: 2em !important;
     }
     & p{
       font-size:25px;
@@ -54,6 +56,14 @@ export const MainMessageContainer = styled('div')`
 export const MainImageContainer = styled('div')`
   display: flex;
   width: 80%;
+  justify-content: center;
+  height: 400px;
+  background-repeat:no-repeat;
+  background-position: center;
+
+  @media (max-width: 768px) {
+    height: 200px;
+  }
 `
 
 export const MainArrowButton = styled('div')`
@@ -63,4 +73,7 @@ export const MainArrowButton = styled('div')`
 
 export const StyledTypist = styled(Typist)`
 margin: 0; padding: 0; color: white; font-size: 80px; font-family: graphite-std,sans-serif;
+@media (max-width: 768px) {
+  font-size: 50px !important;
+}
 `;
